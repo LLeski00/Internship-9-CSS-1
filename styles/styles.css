@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    background-color: black;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 17rem auto 17rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#hamburger {
+    height: 4.5rem;
+    filter: invert(0.7);
+    visibility: hidden;
+}
+
+#logo {
+    height: 4.5rem;
+    margin: 0 auto;
+}
+
+#nav-options {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#nav-options #subscribe-button {
+    background-color: #0787ca;
+    border-radius: 2px;
+    height: 30px;
+    line-height: 30px;
+    width: 112px;
+    text-align: center;
+}
+
+#search-icon {
+    height: 20px;
+}
