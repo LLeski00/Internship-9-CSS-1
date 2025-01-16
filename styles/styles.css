@@ -77,11 +77,15 @@ header > nav:first-of-type {
     display: flex;
 }
 
+.header-content:hover {
+    cursor: pointer;
+}
+
 .header-content img {
     width: 50%;
 }
 
-.header-content article {
+.summary {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -91,18 +95,18 @@ header > nav:first-of-type {
     padding-right: 1.5rem;
 }
 
-.header-content article a {
+.summary a {
     font-size: 36px;
     max-width: 31.25rem;
 }
 
-.header-content article p {
+.summary p {
     margin-top: 1rem;
     font-size: 21px;
     max-width: 31.25rem;
 }
 
-.header-content article button {
+.summary button {
     margin-top: 1rem;
     padding: 0px 1rem;
     background-color: black;
@@ -116,7 +120,7 @@ header > nav:first-of-type {
     font-size: 13px;
 }
 
-.header-content article button img {
+.summary button img {
     margin-right: 0.5rem;
     height: 24px;
     width: 24px;
@@ -130,12 +134,101 @@ header > nav:first-of-type {
     background-color: white;
     bottom: 0;
     z-index: 999;
+    padding: 1rem 0px;
 }
 
 .sub-navbar a {
     background-color: white;
     color: black;
     font-size: 12px;
+    font-weight: 500;
+}
+
+main {
+    background-color: white;
+    padding: 0px 3rem;
+    margin: 0px auto;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: rgb(226, 226, 226);
+}
+
+main h3 {
+    font-size: 36px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    padding: 0.5rem 0px 1rem 0px;
+}
+
+main section nav {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+main section {
+    padding-bottom: 3.5rem;
+}
+
+.article-preview {
+    width: 400px;
+}
+
+.article-preview h4,
+p,
+strong {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.article-preview img {
+    height: 20rem;
+    width: auto;
+}
+
+.section-main-content {
+    width: auto;
+    margin: 0px auto;
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    padding: 0px 3rem;
+    max-width: 1600px;
+}
+
+.section-main-content a {
+    color: black;
+}
+
+.section-main-content .image-container {
+    height: 40.5rem;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.section-main-content .image-container img {
+    height: 100%;
+    width: auto;
+}
+
+#columnists .section-main-content {
+    background-color: black;
+    color: white;
+}
+
+#columnists .section-main-content a {
+    color: white;
+}
+
+#columnists .section-main-content .image-container {
+    flex-basis: 50%;
 }
 
 footer {
