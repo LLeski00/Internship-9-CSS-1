@@ -1,3 +1,7 @@
+@import url(https://db.onlinewebfonts.com/c/1e44faec07b8b81f60a3215d76bd0086?family=Irvin-Heading);
+@import url(https://db.onlinewebfonts.com/c/68e94a17c3e618dbe0936fcbf25b26c6?family=TNY+Adobe+Caslon+Pro+Regular);
+@import url(https://db.onlinewebfonts.com/c/ffdb115a48bbb5ff87411ac93b52584f?family=Neutraface+New+Yorker+Book);
+
 * {
     margin: 0;
 }
@@ -6,18 +10,37 @@ html {
     font-size: 16px;
     background-color: rgb(18, 18, 18);
     --gray-text: rgb(162, 162, 162);
+    --white-border-color: rgb(226, 226, 226);
+    --black-border-color: rgb(51, 51, 51);
+    --red-text: rgb(219, 51, 52);
+    overflow: visible;
+}
+
+body {
+    overflow: visible;
 }
 
 a {
     text-decoration: none;
     color: white;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Irvin-Heading", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     text-align: center;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 p {
     text-align: center;
+    font-family: "TNY Adobe Caslon Pro Regular", "Times New Roman", Times, serif;
+    line-height: 1.33333em;
+}
+
+strong {
+    font-family: "Neutraface New Yorker Book", "Helvetica Neue", Helvetica,
+        Arial, sans-serif;
 }
 
 ul {
@@ -28,16 +51,23 @@ ul {
 header {
     background-color: black;
     color: white;
-    font-family: TNYAdobeCaslonPro, "Times New Roman", Times, serif;
 }
 
-header > nav:first-of-type {
-    position: sticky;
+header > nav a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header .main-navbar {
+    position: fixed;
+    width: 100%;
     top: 0;
     display: grid;
+    z-index: 9999;
     grid-template-columns: 17rem auto 17rem;
     padding-left: 20px;
     padding-right: 20px;
+    box-sizing: border-box;
+    background-color: black;
 }
 
 #hamburger {
@@ -59,13 +89,82 @@ header > nav:first-of-type {
     gap: 20px;
 }
 
-#nav-options #subscribe-button {
+#nav-options a {
+    white-space: nowrap;
+}
+
+#subscribe-button {
     background-color: #0787ca;
     border-radius: 2px;
     height: 30px;
     line-height: 30px;
     width: 112px;
     text-align: center;
+}
+
+.subscribe-hover-window {
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-color: #feefb9;
+    height: 200px;
+    width: 300px;
+    transition: opacity 0.3s linear, top 0.3s linear;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    color: black;
+    padding: 20px 0px 20px 20px;
+    box-sizing: border-box;
+}
+
+.subscribe-content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: start;
+    align-items: flex-start;
+}
+
+.subscribe-content > * {
+    width: 100%;
+    white-space: wrap;
+}
+
+.subscribe-content img {
+    width: 96px;
+    height: auto;
+    margin: 0px;
+}
+
+.subscribe-content h4 {
+    font-family: "TNY Adobe Caslon Pro Regular", "Times New Roman", Times, serif;
+    font-size: 24px;
+    font-weight: 2;
+}
+
+.subscribe-content button {
+    width: 80px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    font-size: 11px;
+    border-radius: 3px;
+}
+
+.subscribe-hover-window > img {
+    width: 112px;
+    height: auto;
+    padding: 0px 10px;
+}
+
+#subscribe-button:hover .subscribe-hover-window {
+    visibility: visible;
+    top: 70px;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 #search-icon {
@@ -91,16 +190,23 @@ header > nav:first-of-type {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 4rem 3rem 2rem 3rem;
+}
+
+.summary .article-category {
+    font-size: 12px;
+    color: var(--red-text);
 }
 
 .summary a {
+    text-align: center;
     font-size: 36px;
     max-width: 31.25rem;
+    margin-top: 1.5rem;
 }
 
 .summary p {
+    text-align: center;
     margin-top: 1rem;
     font-size: 21px;
     max-width: 31.25rem;
@@ -114,7 +220,7 @@ header > nav:first-of-type {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(229, 229, 229);
+    border: 1px solid var(--black-border-color);
     border-radius: 3rem;
     height: 3rem;
     font-size: 13px;
@@ -126,15 +232,27 @@ header > nav:first-of-type {
     width: 24px;
 }
 
+.summary-text {
+    margin-top: 1.5rem;
+}
+
+.summary strong {
+    margin-top: 1rem;
+    font-size: 15px;
+}
+
 .sub-navbar {
     position: sticky;
+    top: 72px;
+    width: 100%;
     display: flex;
     justify-content: center;
     gap: 1rem;
     background-color: white;
     bottom: 0;
-    z-index: 999;
     padding: 1rem 0px;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
 .sub-navbar a {
@@ -147,63 +265,114 @@ header > nav:first-of-type {
 main {
     background-color: white;
     padding: 0px 3rem;
-    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
 }
 
 hr {
     border: none;
     height: 1px;
     background-color: rgb(226, 226, 226);
+    box-sizing: border-box;
+    width: 100%;
 }
 
-main h3 {
-    font-size: 36px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+main hr {
+    max-width: 1472px;
+}
+
+h2 {
+    font-size: 28px;
+    font-family: "Irvin-Heading", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     text-align: center;
-    padding: 0.5rem 0px 1rem 0px;
+    padding: 1rem 0px 3rem 0px;
 }
 
 main section nav {
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.article-preview img {
+    border-right: solid 1px;
+    padding-right: 1rem;
+    border-color: var(--white-border-color);
+}
+
+main section nav > .article-preview:last-child img {
+    padding: 0px;
+    border: none;
 }
 
 main section {
     padding-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1600px;
+    padding: 0px 4rem;
+    padding-bottom: 3.5rem;
+    box-sizing: border-box;
 }
 
 .article-preview {
-    width: 400px;
-}
-
-.article-preview h4,
-p,
-strong {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+}
+
+.article-preview a,
+p,
+strong {
     text-align: start;
+}
+
+.article-preview a {
+    color: black;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.article-preview p {
+    font-size: 17px;
 }
 
 .article-preview img {
     height: 20rem;
-    width: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+#wildfire-crisis .summary button {
+    background-color: white;
+    color: black;
+    border-color: var(--white-border-color);
+}
+
+#wildfire-crisis .summary button img {
+    filter: invert(1);
 }
 
 .section-main-content {
-    width: auto;
-    margin: 0px auto;
+    width: 100%;
     margin-top: 3.5rem;
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;
-    padding: 0px 3rem;
-    max-width: 1600px;
+    padding: 0px 4rem;
+    box-sizing: border-box;
 }
 
 .section-main-content a {
     color: black;
+}
+
+.section-main-content .summary {
+    box-sizing: border-box;
 }
 
 .section-main-content .image-container {
@@ -211,15 +380,16 @@ strong {
     width: 50%;
     display: flex;
     justify-content: center;
-}
-
-.section-main-content .image-container img {
-    height: 100%;
-    width: auto;
+    margin: 2rem 3rem;
 }
 
 #columnists .section-main-content {
+    padding: 0px;
     background-color: black;
+    color: white;
+}
+
+#columnists .section-main-content .article-category {
     color: white;
 }
 
@@ -229,16 +399,89 @@ strong {
 
 #columnists .section-main-content .image-container {
     flex-basis: 50%;
+    margin: 0px;
+}
+
+#columnists .section-main-content .image-container img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+#puzzles-and-games {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#puzzles-and-games > h2 {
+    padding-bottom: 0px;
+    font-size: 28px;
+    margin-bottom: 1rem;
+}
+
+#puzzles-and-games > p {
+    padding-bottom: 3rem;
+    font-size: 21px;
+}
+
+.puzzles-list {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.puzzle {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 17.5rem;
+    border-radius: 1rem;
+}
+
+.puzzle a {
+    color: black;
+    font-size: 18px;
+}
+
+.puzzle p {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 16px;
+}
+
+.puzzle > a:last-of-type {
+    margin-top: 20%;
+    font-size: 12px;
+}
+
+.puzzle > a:last-of-type span {
+    font-size: 8px;
+}
+
+.puzzle img {
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    height: 10rem;
+    object-fit: contain;
 }
 
 footer {
-    background-color: rgb(18, 18, 18);
-    color: white;
     display: flex;
     flex-direction: column;
-    padding: 0px 3rem;
-    margin: 0px auto;
+    align-items: center;
+    background-color: rgb(18, 18, 18);
+    color: white;
     max-width: 1600px;
+    width: 100%;
+    padding: 0px 4rem;
+    margin: 0px auto;
+    box-sizing: border-box;
+}
+
+footer > * {
+    width: 100%;
 }
 
 footer p {
@@ -246,9 +489,8 @@ footer p {
 }
 
 footer hr {
-    border: none;
-    height: 1px;
-    background-color: rgb(78, 78, 78);
+    padding: 0px;
+    background-color: var(--black-border-color);
 }
 
 footer section {
@@ -256,8 +498,13 @@ footer section {
 }
 
 .footer-logo {
+    padding: 1rem 0px;
     display: flex;
     justify-content: center;
+}
+
+.footer-logo img {
+    height: 3.5rem;
 }
 
 footer ul {
@@ -286,18 +533,55 @@ section > p {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.footer-copyright p {
-    font-size: 10px;
+.footer-copyright {
+    display: flex;
+}
+
+.copyright-text {
+    display: flex;
+    align-items: center;
+}
+
+.copyright-text p {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gray-text);
+    white-space: normal;
+}
+
+.copyright-text a {
+    display: inline;
+    white-space: nowrap;
+    font-size: 11px;
+    font-weight: 500;
     color: var(--gray-text);
 }
 
-.footer-copyright a {
-    font-size: 10px;
-    color: var(--gray-text);
+.footer-copyright .social-media-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: 10rem;
+}
+
+.footer-copyright .social-media-icons img {
+    height: 32px;
 }
 
 .footer-manage {
     color: var(--gray-text);
     display: flex;
+    gap: 1rem;
     justify-content: center;
+    align-items: center;
+    margin: 2rem auto 4rem;
+    font-size: 12px;
+}
+
+.footer-manage p {
+    margin: 0;
+}
+
+.footer-manage img {
+    height: 1rem;
 }

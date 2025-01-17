@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <nav>
+            <nav class="main-navbar">
                 <img
                     src="./assets/images/hamburger.svg"
                     id="hamburger"
@@ -22,7 +22,30 @@
                 <div id="nav-options">
                     <a href="/">Newsletter</a>
                     <a href="/">Sign In</a>
-                    <a href="/" id="subscribe-button">Subscribe</a>
+                    <a href="/" id="subscribe-button">
+                        <div class="subscribe-hover-window">
+                            <div class="subscribe-content">
+                                <img
+                                    src="./assets/images/nyr-logo.png"
+                                    alt="logo"
+                                    class="logo"
+                                />
+                                <h4>Unlimited Access</h4>
+                                <p>Welcome offer:</p>
+                                <p>
+                                    <del>$2.50</del>$1 a week for one year, plus
+                                    get a free tote.
+                                </p>
+                                <button>SUBSCRIBE</button>
+                                <p>Cancel anytime.</p>
+                            </div>
+                            <img
+                                src="./assets/images/NYR_MemDaySale_Intender_Spot_Art_466x733.png"
+                                alt=""
+                            />
+                        </div>
+                        Subscribe
+                    </a>
                     <a href="/">
                         <img
                             src="./assets/images/icons8-search.svg"
@@ -36,7 +59,7 @@
                 <img src="./assets/images/signs.png" alt="signs" />
                 <article class="summary">
                     <a href="/">ON A MISSION FROM GOD</a>
-                    <p>
+                    <p class="summary-text">
                         Across the country, billions of taxpayer dollars now
                         subsidize private religious education. A trove of mostly
                         unpublished correspondence reveals the origin of this
@@ -52,6 +75,9 @@
                     </button>
                 </article>
             </div>
+        </header>
+        <hr />
+        <main>
             <nav class="sub-navbar">
                 <a href="">The Latest</a><a href="">News</a
                 ><a href="">Books & Culture</a><a href="">Fiction & Poetry</a
@@ -60,11 +86,8 @@
                 ><a href="">Podcasts</a><a href="">Going On</a
                 ><a href="">Shop</a>
             </nav>
-        </header>
-        <hr />
-        <main>
             <section id="wildfire-crisis">
-                <h3>Los Angeles’s Wildfire Crisis</h3>
+                <h2>Los Angeles’s Wildfire Crisis</h2>
 
                 <nav>
                     <div class="article-preview">
@@ -72,7 +95,7 @@
                             src="./assets/images/Immerwahr_GettyImages-2192574297.png"
                             alt=""
                         />
-                        <h4>The New Combustible Age</h4>
+                        <a>The New Combustible Age</a>
                         <p>
                             The Los Angeles fires hark to the nineteenth-century
                             blazes that ravaged our cities--and point toward an
@@ -85,7 +108,7 @@
                             src="./assets/images/Witt-Palisades-Fire.png"
                             alt=""
                         />
-                        <h4>On the Ground During L.A.'s Wildfire Emergency</h4>
+                        <a>On the Ground During L.A.'s Wildfire Emergency</a>
                         <p>
                             With four fires raging, tens of thousands have
                             evacuated and others are confronting the precarity
@@ -95,9 +118,9 @@
                     </div>
                     <div class="article-preview">
                         <img src="./assets/images/Chotiner-Swain.png" alt="" />
-                        <h4>
+                        <a>
                             How Did the Los Angeles Fires Get So Out of Control?
-                        </h4>
+                        </a>
                         <p>
                             A climate scientis discusses how to think about and
                             weigh the variables that led to the current
@@ -110,10 +133,10 @@
                             src="./assets/images/kolbert-california-fire-insurance-aaron-huey-01.png"
                             alt=""
                         />
-                        <h4>
+                        <a>
                             The Insurance Crisis That Will Follow the California
                             Fires
-                        </h4>
+                        </a>
                         <p>
                             For years, experts have warned that homeowner
                             insurance in the state could easily collapse.
@@ -127,16 +150,17 @@
                         <img src="./assets/images/face.png" alt="face" />
                     </div>
                     <article class="summary">
+                        <p class="article-category">BOOKS</p>
                         <a href="/"
                             >Does One Emotion Rule All Our Ethical Judgments?</a
                         >
-                        <p>
+                        <p class="summary-text">
                             When prehistoric predators abounded, the ability to
                             perceive harm helped our ancestors survive. Some
                             researchers wonder whether it fuels our greatest
                             fights today. <br />
-                            <strong>By Elizabeth Kolbert</strong>
                         </p>
+                        <strong>By Elizabeth Kolbert</strong>
                         <button>
                             <img
                                 src="./assets/images/headphones.png"
@@ -149,7 +173,7 @@
             </section>
             <hr />
             <section id="columnists">
-                <h3>Our Columnists</h3>
+                <h2>Our Columnists</h2>
 
                 <nav>
                     <div class="article-preview">
@@ -157,7 +181,7 @@
                             src="./assets/images/OpenQuestions_SystemFailure_final-1.gif"
                             alt=""
                         />
-                        <h4>How Do You Know When a System Has Failed?</h4>
+                        <a>How Do You Know When a System Has Failed?</a>
                         <p>
                             We see broken systems all around us. At least, we
                             think we do.
@@ -166,10 +190,10 @@
                     </div>
                     <div class="article-preview">
                         <img src="./assets/images/Untitledf.png" alt="" />
-                        <h4>
+                        <a>
                             Blake Lively, Justin Baldoni, and the Collapse of
                             the Hollywood #MeToo Era
-                        </h4>
+                        </a>
                         <p>
                             The reportage that thrived in the late twenty-tens
                             cannot break through on today's volatile Internet,
@@ -183,10 +207,10 @@
                             src="./assets/images/Cassidy-TrumpGreenland-Scanpix.png"
                             alt=""
                         />
-                        <h4>
+                        <a>
                             What Imperialist Game Is Trump Playing with
                             Greenland?
-                        </h4>
+                        </a>
                         <p>
                             The President-elect's brand of America First
                             isolationism has always sat awkwardly with his
@@ -199,7 +223,7 @@
                             src="./assets/images/Sporting-Scene-Coco-Gauff.png"
                             alt=""
                         />
-                        <h4>Coco Gauff Edits Her Game</h4>
+                        <a>Coco Gauff Edits Her Game</a>
                         <p>
                             Will the tennis star's small technical adjustments
                             deliver big at the Australian Open?
@@ -212,17 +236,18 @@
                         <img src="./assets/images/r45086.png" alt="face" />
                     </div>
                     <article class="summary">
+                        <p class="article-category">LIFE AND LETTERS</p>
                         <a href="/"
                             >Did a Best-Selling Romantasy Novelist Steal Another
                             Writer’s Story?</a
                         >
-                        <p>
+                        <p class="summary-text">
                             Tracy Wolff, the author of the "Crave" series, is
                             being sued for copyright infringement. But
                             romantasy's reliance on standardized tropes makes
                             proving plot theft tricky. <br />
-                            <strong>By Katy Waldman</strong>
                         </p>
+                        <strong>By Katy Waldman</strong>
                         <button>
                             <img
                                 src="./assets/images/headphones.png"
@@ -231,6 +256,76 @@
                             Listen
                         </button>
                     </article>
+                </div>
+            </section>
+            <hr />
+            <section id="puzzles-and-games">
+                <h2>Puzzles & Games</h2>
+                <p>Take a break and play.</p>
+
+                <div class="puzzles-list">
+                    <div
+                        class="puzzle"
+                        style="background-color: rgb(132, 201, 255)"
+                    >
+                        <a href="">THE CROSSWORD</a>
+                        <p>
+                            A puzzle that ranges in difficulty, with the
+                            occasional theme.
+                        </p>
+                        <img
+                            src="./assets/images/TNY_Crossword.gif"
+                            alt="crossword"
+                        />
+                        <a href=""
+                            >Solve the latest puzzle <span>&gt;&gt;</span></a
+                        >
+                    </div>
+                    <div
+                        class="puzzle"
+                        style="background-color: rgb(165, 232, 253)"
+                    >
+                        <a href="">THE MINI</a>
+                        <p>A bite-size crossword, for a quick diversion.</p>
+                        <img
+                            src="./assets/images/mini_anim.gif"
+                            alt="the-mini"
+                        />
+                        <a href=""
+                            >Solve the latest puzzle <span>&gt;&gt;</span></a
+                        >
+                    </div>
+                    <div
+                        class="puzzle"
+                        style="background-color: rgb(255, 239, 185)"
+                    >
+                        <a href="">NAME DROP</a>
+                        <p>
+                            Can you guess the notable person in six clues or
+                            fewer?
+                        </p>
+                        <img
+                            src="./assets/images/TNY_NameDrop.gif"
+                            alt="name-drop"
+                        />
+                        <a href=""
+                            >Play a quiz from the vault <span>&gt;&gt;</span></a
+                        >
+                    </div>
+                    <div
+                        class="puzzle"
+                        style="background-color: rgb(246, 246, 246)"
+                    >
+                        <a href="">CARTOON CAPTION CONTEST</a>
+                        <p>We provide a cartoon, you provide a caption.</p>
+                        <img
+                            src="./assets/images/TNY_CaptionContest.gif"
+                            alt="caption-contest"
+                        />
+                        <a href=""
+                            >Solve the latest puzzle <span>&gt;&gt;</span></a
+                        >
+                    </div>
                 </div>
             </section>
         </main>
@@ -290,28 +385,48 @@
             </section>
             <hr />
             <section class="footer-copyright">
-                <p>
-                    © 2025 Condé Nast. All rights reserved. The New Yorker may
-                    earn a portion of sales from products that are purchased
-                    through our site as part of our Affiliate Partnerships with
-                    retailers. The material on this site may not be reproduced,
-                    distributed, transmitted, cached or otherwise used, except
-                    with the prior written permission of Condé Nast.
-                    <a href="">Ad Choices</a>
-                </p>
+                <div class="copyright-text">
+                    <p>
+                        © 2025 Condé Nast. All rights reserved. The New Yorker
+                        may earn a portion of sales from products that are
+                        purchased through our site as part of our Affiliate
+                        Partnerships with retailers. The material on this site
+                        may not be reproduced, distributed, transmitted, cached
+                        or otherwise used, except with the prior written
+                        permission of Condé Nast.
+                        <a href="">Ad Choices</a>
+                    </p>
+                </div>
                 <div class="social-media-icons">
-                    <img src="" alt="" /><img src="" alt="" /><img
-                        src=""
-                        alt=""
-                    /><img src="" alt="" /><img src="" alt="" /><img
-                        src=""
-                        alt=""
-                    /><img src="" alt="" />
+                    <img
+                        src="./assets/images/icons8-instagram-96.png"
+                        alt="instagram"
+                    /><img
+                        src="./assets/images/icons8-tik-tok-96.png"
+                        alt="tik-tok"
+                    /><img
+                        src="./assets/images/icons8-threads-96.png"
+                        alt="threads"
+                    /><img src="./assets/images/icons8-x-100.png" alt="x" /><img
+                        src="./assets/images/icons8-f-100.png"
+                        alt="facebook"
+                    /><img
+                        src="./assets/images/icons8-linkedin-100.png"
+                        alt="linked-in"
+                    /><img
+                        src="./assets/images/icons8-youtube-96.png"
+                        alt="youtube"
+                    />
                 </div>
             </section>
             <hr />
             <section class="footer-manage">
-                <img src="" alt="" />
+                <div class="image-container">
+                    <img
+                        src="./assets/images/icons8-toggle-48.png"
+                        alt="toggle"
+                    />
+                </div>
                 <p>Manage Preferences</p>
             </section>
         </footer>
