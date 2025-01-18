@@ -13,6 +13,8 @@ html {
     --white-border-color: rgb(226, 226, 226);
     --black-border-color: rgb(51, 51, 51);
     --red-text: rgb(219, 51, 52);
+    --hover-background: #feefb9;
+    --section-padding-left-right: 4rem;
     overflow: visible;
 }
 
@@ -49,6 +51,7 @@ ul {
 }
 
 header {
+    width: 100%;
     background-color: black;
     color: white;
 }
@@ -61,6 +64,7 @@ header .main-navbar {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     display: grid;
     z-index: 9999;
     grid-template-columns: 17rem auto 17rem;
@@ -70,15 +74,165 @@ header .main-navbar {
     background-color: black;
 }
 
+main {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: rgb(226, 226, 226);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+main hr {
+    max-width: 1472px;
+}
+
+h2 {
+    font-size: 28px;
+    font-family: "Irvin-Heading", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    padding: 1rem 0px 3rem 0px;
+}
+
+main section nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+main section {
+    padding-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1600px;
+    width: 100%;
+    padding: 0px var(--section-padding-left-right);
+    padding-bottom: 3.5rem;
+    box-sizing: border-box;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(18, 18, 18);
+    color: white;
+    max-width: 1600px;
+    width: 100%;
+    padding: 0px 4rem;
+    margin: 0px auto;
+    box-sizing: border-box;
+}
+
+footer > * {
+    width: 100%;
+}
+
+footer p {
+    text-align: start;
+}
+
+footer hr {
+    padding: 0px;
+    background-color: var(--black-border-color);
+}
+
+footer section {
+    padding: 2rem 0px;
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+    color: var(--gray-text);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+footer ul li a {
+    color: var(--gray-text);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+section > p {
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+
 #hamburger {
-    height: 4.5rem;
+    height: 16px;
     filter: invert(0.7);
     visibility: hidden;
+}
+
+.main-navbar input {
+    display: none;
+}
+
+.main-navbar #toggle:checked ~ .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-navbar label {
+    display: flex;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 3rem 1.5rem 2rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.hamburger-menu hr {
+    background-color: black;
+    margin-bottom: 2rem;
+}
+
+.hamburger-menu > a {
+    font-size: 16px;
+    text-align: start;
+    font-family: "Irvin-Heading", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    margin-bottom: 2rem;
+}
+
+.hamburger-menu hr ~ a {
+    font-size: 12px;
+    text-align: start;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.main-navbar .image-container {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
     height: 4.5rem;
     margin: 0 auto;
+    padding-top: 0.2rem;
 }
 
 #nav-options {
@@ -105,9 +259,9 @@ header .main-navbar {
 .subscribe-hover-window {
     visibility: hidden;
     position: absolute;
-    top: 50px;
-    right: 50px;
-    background-color: #feefb9;
+    top: 65px;
+    right: 65px;
+    background-color: var(--hover-background);
     height: 200px;
     width: 300px;
     transition: opacity 0.3s linear, top 0.3s linear;
@@ -143,13 +297,18 @@ header .main-navbar {
     font-family: "TNY Adobe Caslon Pro Regular", "Times New Roman", Times, serif;
     font-size: 24px;
     font-weight: 2;
+    white-space: nowrap;
+}
+
+.subscribe-content p {
+    font-size: 12px;
 }
 
 .subscribe-content button {
     width: 80px;
     height: 30px;
     background-color: black;
-    color: white;
+    color: var(--hover-background);
     font-size: 11px;
     border-radius: 3px;
 }
@@ -162,7 +321,7 @@ header .main-navbar {
 
 #subscribe-button:hover .subscribe-hover-window {
     visibility: visible;
-    top: 70px;
+    top: 80px;
     opacity: 1;
     pointer-events: auto;
 }
@@ -173,15 +332,26 @@ header .main-navbar {
 }
 
 .header-content {
+    padding-top: 5rem;
     display: flex;
+    height: 95vh;
+    box-sizing: border-box;
 }
 
 .header-content:hover {
     cursor: pointer;
 }
 
-.header-content img {
+.header-content > a {
     width: 50%;
+    overflow: hidden;
+}
+
+.header-content a > img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .summary {
@@ -191,6 +361,7 @@ header .main-navbar {
     align-items: center;
     justify-content: center;
     padding: 4rem 3rem 2rem 3rem;
+    box-sizing: border-box;
 }
 
 .summary .article-category {
@@ -198,21 +369,19 @@ header .main-navbar {
     color: var(--red-text);
 }
 
-.summary a {
+.summary > a:first-of-type {
     text-align: center;
     font-size: 36px;
     max-width: 31.25rem;
     margin-top: 1.5rem;
 }
 
-.summary p {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 21px;
-    max-width: 31.25rem;
+.summary a {
+    display: flex;
+    justify-content: center;
 }
 
-.summary button {
+.summary a > button {
     margin-top: 1rem;
     padding: 0px 1rem;
     background-color: black;
@@ -224,16 +393,22 @@ header .main-navbar {
     border-radius: 3rem;
     height: 3rem;
     font-size: 13px;
+    cursor: pointer;
 }
 
-.summary button img {
+.summary a button img {
     margin-right: 0.5rem;
     height: 24px;
     width: 24px;
 }
 
 .summary-text {
-    margin-top: 1.5rem;
+    text-align: center;
+    font-family: "TNY Adobe Caslon Pro Regular", "Times New Roman", Times, serif;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 21px;
+    max-width: 31.25rem;
 }
 
 .summary strong {
@@ -253,48 +428,15 @@ header .main-navbar {
     padding: 1rem 0px;
     box-sizing: border-box;
     z-index: 1000;
+    border-bottom: 1px solid var(--white-border-color);
 }
 
 .sub-navbar a {
     background-color: white;
     color: black;
     font-size: 12px;
-    font-weight: 500;
-}
-
-main {
-    background-color: white;
-    padding: 0px 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: visible;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background-color: rgb(226, 226, 226);
-    box-sizing: border-box;
-    width: 100%;
-}
-
-main hr {
-    max-width: 1472px;
-}
-
-h2 {
-    font-size: 28px;
-    font-family: "Irvin-Heading", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 500;
-    text-align: center;
-    padding: 1rem 0px 3rem 0px;
-}
-
-main section nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .article-preview img {
@@ -308,26 +450,21 @@ main section nav > .article-preview:last-child img {
     border: none;
 }
 
-main section {
-    padding-bottom: 3.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1600px;
-    padding: 0px 4rem;
-    padding-bottom: 3.5rem;
-    box-sizing: border-box;
-}
-
 .article-preview {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
+.article-preview-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .article-preview a,
-p,
-strong {
+p {
+    font-family: "TNY Adobe Caslon Pro Regular", "Times New Roman", Times, serif;
     text-align: start;
 }
 
@@ -355,6 +492,24 @@ strong {
 
 #wildfire-crisis .summary button img {
     filter: invert(1);
+}
+
+#wildfire-crisis .section-main-content {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#wildfire-crisis .section-main-content .summary {
+    flex-basis: 50%;
+}
+
+#wildfire-crisis .section-main-content .image-container {
+    flex-basis: 50%;
+}
+
+#wildfire-crisis .section-main-content .image-container img {
+    width: 100%;
+    object-fit: contain;
 }
 
 .section-main-content {
@@ -397,7 +552,7 @@ strong {
     color: white;
 }
 
-#columnists .section-main-content .image-container {
+.section-main-content .image-container {
     flex-basis: 50%;
     margin: 0px;
 }
@@ -417,7 +572,6 @@ strong {
 
 #puzzles-and-games > h2 {
     padding-bottom: 0px;
-    font-size: 28px;
     margin-bottom: 1rem;
 }
 
@@ -430,14 +584,19 @@ strong {
     display: flex;
     gap: 2rem;
     justify-content: center;
+    width: 100%;
+    min-height: 20rem;
 }
 
 .puzzle {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    width: 17.5rem;
+    width: 100%;
+    max-width: 100%;
     border-radius: 1rem;
+    min-height: 20rem;
+    cursor: pointer;
 }
 
 .puzzle a {
@@ -452,8 +611,11 @@ strong {
 }
 
 .puzzle > a:last-of-type {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-top: 20%;
     font-size: 12px;
+    justify-self: flex-end;
+    font-weight: bold;
 }
 
 .puzzle > a:last-of-type span {
@@ -462,39 +624,10 @@ strong {
 
 .puzzle img {
     margin-bottom: 1rem;
-    margin-top: 4rem;
-    height: 10rem;
+    margin-top: auto;
+    width: 100%;
+    max-height: 45%;
     object-fit: contain;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(18, 18, 18);
-    color: white;
-    max-width: 1600px;
-    width: 100%;
-    padding: 0px 4rem;
-    margin: 0px auto;
-    box-sizing: border-box;
-}
-
-footer > * {
-    width: 100%;
-}
-
-footer p {
-    text-align: start;
-}
-
-footer hr {
-    padding: 0px;
-    background-color: var(--black-border-color);
-}
-
-footer section {
-    padding: 2rem 0px;
 }
 
 .footer-logo {
@@ -507,18 +640,6 @@ footer section {
     height: 3.5rem;
 }
 
-footer ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5em;
-    color: var(--gray-text);
-}
-
-section > p {
-    font-size: 14px;
-    margin-bottom: 0.5rem;
-}
-
 .footer-nav {
     display: flex;
 }
@@ -526,6 +647,14 @@ section > p {
 .footer-sections,
 .footer-more {
     width: 50%;
+}
+
+.footer-sections > p {
+    font-family: "Irvin-Heading", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.footer-more > p {
+    font-family: "Irvin-Heading", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .footer-general ul {
@@ -548,20 +677,28 @@ section > p {
     font-weight: 500;
     color: var(--gray-text);
     white-space: normal;
+    line-height: 1.27em;
 }
 
 .copyright-text a {
     display: inline;
+    text-decoration: underline;
+    font-family: "TNY Adobe Caslon Pro Regular", "Times New Roman", Times, serif;
     white-space: nowrap;
     font-size: 11px;
     font-weight: 500;
     color: var(--gray-text);
+    line-height: 1.27em;
 }
 
 .footer-copyright .social-media-icons {
     display: flex;
     gap: 1.5rem;
     margin-left: 10rem;
+}
+
+.footer-copyright .social-media-icons img:hover {
+    cursor: pointer;
 }
 
 .footer-copyright .social-media-icons img {
@@ -580,8 +717,316 @@ section > p {
 
 .footer-manage p {
     margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .footer-manage img {
     height: 1rem;
+}
+
+@media (max-width: 1600px) {
+    main hr {
+        max-width: calc(100% - 2 * var(--section-padding-left-right));
+    }
+
+    .puzzle img {
+        max-height: 8rem;
+    }
+
+    .puzzle > a:last-of-type {
+        margin-top: 10%;
+    }
+}
+
+@media (max-width: 1024px) {
+    main section {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    main section nav {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    main section nav > * {
+        border-bottom: 1px solid var(--white-border-color);
+    }
+
+    main section nav > *:last-child {
+        border: none;
+    }
+
+    footer {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    footer section ul {
+        gap: 2rem;
+    }
+
+    footer section > p {
+        margin-bottom: 2rem;
+    }
+
+    #nav-options {
+        display: none;
+    }
+
+    #hamburger {
+        visibility: visible;
+    }
+
+    .logo {
+        max-height: 3rem;
+    }
+
+    .sub-navbar {
+        display: none;
+    }
+
+    .header-content {
+        max-height: 50vh;
+    }
+
+    .summary a:first-of-type {
+        font-size: 28px;
+    }
+
+    .summary-text {
+        font-size: 17px;
+    }
+
+    .article-preview {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .article-preview img {
+        justify-self: flex-end;
+        align-self: flex-end;
+        border: none;
+        padding-right: 0px;
+        padding-bottom: 1rem;
+        width: 13rem;
+        height: auto;
+    }
+
+    .puzzles-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .puzzle {
+        width: 100%;
+        min-height: 6rem;
+        display: grid;
+        grid-template-columns: auto 10rem;
+        grid-template-rows: auto auto 1fr;
+        box-sizing: border-box;
+        padding: 1.5rem 1rem;
+    }
+
+    .puzzle > a {
+        grid-column: 1/2;
+    }
+
+    .puzzle > a:first-of-type {
+        grid-row: 1/2;
+    }
+
+    .puzzle > a:last-of-type {
+        width: 100%;
+        grid-row: 3/4;
+        text-align: start;
+    }
+
+    .puzzle > p {
+        text-align: start;
+        width: 100%;
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .puzzle > * {
+        text-align: start;
+    }
+
+    .puzzle img {
+        grid-row: 1/4;
+        grid-column: 2/3;
+        width: 10rem;
+        max-height: 7.5rem;
+    }
+
+    .footer-logo img {
+        height: 4rem;
+        max-height: 4rem;
+    }
+
+    .footer-sections {
+        border-bottom: 1px solid var(--black-border-color);
+    }
+
+    .footer-nav {
+        flex-direction: column;
+    }
+
+    .footer-nav > * {
+        width: 100%;
+    }
+
+    .footer-general ul {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-copyright {
+        flex-direction: column-reverse;
+    }
+
+    .footer-copyright .social-media-icons {
+        margin-left: 0px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-copyright .copyright-text {
+        margin-top: 2rem;
+    }
+
+    .footer-manage p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 767px) {
+    main section > h2 {
+        font-size: 22px;
+    }
+
+    main section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    main hr {
+        max-width: calc(100% - 3rem);
+    }
+
+    header .main-navbar {
+        grid-template-columns: 1fr auto 1fr;
+    }
+
+    .header-content {
+        flex-direction: column-reverse;
+        max-height: none;
+        height: auto;
+    }
+
+    .header-content .summary {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .header-content > a {
+        width: 100%;
+    }
+
+    .header-content a > img {
+        width: 100%;
+        height: auto;
+    }
+
+    .article-preview .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .article-preview .image-container img {
+        align-self: auto;
+    }
+
+    .article-preview-text {
+        gap: 0.25rem;
+    }
+
+    .article-preview-text a {
+        font-size: 22px;
+    }
+
+    .article-preview img {
+        width: 7rem;
+        height: 5.25rem;
+    }
+
+    .article-preview img {
+        width: 7rem;
+        height: 5.25rem;
+    }
+
+    .section-main-content {
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .summary {
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .summary > * {
+        max-width: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .summary > a:first-of-type {
+        max-width: none;
+    }
+
+    .section-main-content .image-container {
+        width: 100%;
+    }
+
+    #columnists .section-main-content {
+        width: 100vw;
+    }
+
+    #columnists .section-main-content .summary {
+        padding: 3rem 1.5rem;
+    }
+
+    #puzzles-and-games > p {
+        font-size: 18px;
+    }
+
+    .puzzle {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto 7rem;
+        grid-template-rows: auto;
+        box-sizing: border-box;
+        padding: 1.5rem 1rem;
+    }
+
+    .puzzle img {
+        grid-row: 1/4;
+        grid-column: 2/3;
+        width: 7rem;
+        max-height: 5rem;
+    }
+
+    .puzzle > a:last-of-type {
+        width: 100%;
+        grid-row: 3/4;
+        text-align: start;
+        margin-top: auto;
+    }
 }
